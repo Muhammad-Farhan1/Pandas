@@ -13,6 +13,8 @@ user_info = {
 data = pd.DataFrame(user_info)
 print(data)
 
+#adding a new column and its data:
+
 data.insert(0 , "User_Id" , [401, 402, 403, 404, 405, 406, 407, 408])
 print("New Data")
 print(data)
