@@ -16,3 +16,5 @@ print(data)
 #Deleting multiple columns:
 data.drop(columns=["scores","ages"] , inplace=True)
 print(data)
+
+#inplace: If True, the operation modifies the original DataFrame directly and returns None. If False (default), it returns a new DataFrame with the specified columns removed, leaving the original DataFrame unchanged.
