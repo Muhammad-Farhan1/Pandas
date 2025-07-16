@@ -27,3 +27,20 @@ last(): Returns the last value in a group.
 size(): Returns the size of each group.
 describe(): Generates descriptive statistics (count, mean, std, min, max, percentiles).
 '''
+#Grouping 
+import pandas as pd
+
+data = {
+    'Category': ['A', 'B', 'A', 'C', 'B', 'A'],
+    'Sales': [100, 150, 120, 80, 200, 90],
+    'Region': ['East', 'West', 'East', 'North', 'West', 'South']
+}
+data_frame = pd.DataFrame(data)
+
+# Group by 'Category' and calculate the sum of 'Sales'
+grouped_sales = data_frame.groupby('Category')['Sales'].sum()
+print("Sum of Sales by Category:\n", grouped_sales)
+
+# Group by 'Category' and 'Region' and calculate the mean of 'Sales'
+region = data_frame.groupby(['Category', 'Region'])['Sales'].mean()
+print("\nMean of Sales by Category and Region:\n", region)
